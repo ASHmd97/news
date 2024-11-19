@@ -13,6 +13,7 @@ class AppTheme {
   static const Color brown = Color(0xffCF7E48);
 
   static ThemeData lightTheme = ThemeData(
+    scaffoldBackgroundColor: Colors.transparent,
     appBarTheme: const AppBarTheme(
         backgroundColor: primary,
         foregroundColor: white,
@@ -24,5 +25,12 @@ class AppTheme {
         ),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(50)))),
+    textTheme: const TextTheme(
+      titleLarge: TextStyle(
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+        color: white,
+      ),
+    ),
   );
 }
