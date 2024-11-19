@@ -24,7 +24,9 @@ class AppTheme {
           color: white,
         ),
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(bottom: Radius.circular(50)))),
+          borderRadius: BorderRadius.vertical(bottom: Radius.circular(30)),
+        ),
+        iconTheme: IconThemeData(size: 40, color: white)),
     textTheme: const TextTheme(
       titleLarge: TextStyle(
         fontSize: 24,

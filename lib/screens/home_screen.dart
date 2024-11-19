@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:news/app_theme.dart';
+import 'package:news/drawer/home_drawer.dart';
 import 'package:news/screens/category/category_grid.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -15,9 +16,12 @@ class HomeScreen extends StatelessWidget {
           image: DecorationImage(image: AssetImage('assets/pattern.png'))),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('News App'),
+          title: const Text(
+            'News App',
+          ),
         ),
         body: const CategoryGrid(),
+        drawer: const HomeDrawer(),
       ),
     );
   }
