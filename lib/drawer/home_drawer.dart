@@ -1,8 +1,12 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:news/app_theme.dart';
 
 class HomeDrawer extends StatelessWidget {
-  const HomeDrawer({super.key});
+  HomeDrawer({super.key, required this.onItemSelected});
+
+  void Function(DrawerItem) onItemSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -31,44 +35,54 @@ class HomeDrawer extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      children: [
-                        const Icon(
-                          Icons.list,
-                          size: 40,
-                        ),
-                        const SizedBox(
-                          width: 6,
-                        ),
-                        Text(
-                          'Category',
-                          style: largeTitleStyle?.copyWith(
-                            color: AppTheme.black,
-                            letterSpacing: .9,
+                    InkWell(
+                      onTap: () {
+                        onItemSelected(DrawerItem.categories);
+                      },
+                      child: Row(
+                        children: [
+                          const Icon(
+                            Icons.list,
+                            size: 40,
                           ),
-                        ),
-                      ],
+                          const SizedBox(
+                            width: 6,
+                          ),
+                          Text(
+                            'Category',
+                            style: largeTitleStyle?.copyWith(
+                              color: AppTheme.black,
+                              letterSpacing: .9,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     const SizedBox(
                       height: 12,
                     ),
-                    Row(
-                      children: [
-                        const Icon(
-                          Icons.settings,
-                          size: 40,
-                        ),
-                        const SizedBox(
-                          width: 6,
-                        ),
-                        Text(
-                          'Settings',
-                          style: largeTitleStyle?.copyWith(
-                            color: AppTheme.black,
-                            letterSpacing: .9,
+                    InkWell(
+                      onTap: () {
+                        onItemSelected(DrawerItem.settings);
+                      },
+                      child: Row(
+                        children: [
+                          const Icon(
+                            Icons.settings,
+                            size: 40,
                           ),
-                        ),
-                      ],
+                          const SizedBox(
+                            width: 6,
+                          ),
+                          Text(
+                            'Settings',
+                            style: largeTitleStyle?.copyWith(
+                              color: AppTheme.black,
+                              letterSpacing: .9,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -79,4 +93,9 @@ class HomeDrawer extends StatelessWidget {
       ),
     );
   }
+}
+
+enum DrawerItem {
+  categories,
+  settings,
 }
