@@ -28,11 +28,12 @@ class AppTheme {
         ),
         iconTheme: IconThemeData(size: 40, color: white)),
     textTheme: const TextTheme(
-      titleLarge: TextStyle(
-        fontSize: 24,
-        fontWeight: FontWeight.bold,
-        color: white,
-      ),
-    ),
+        titleLarge: TextStyle(
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+          color: white,
+        ),
+        titleSmall:
+            TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: black)),
   );
 }

@@ -1,10 +1,14 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:news/app_theme.dart';
 import 'package:news/models/category_model.dart';
 import 'package:news/screens/category/category_item.dart';
 
 class CategoryGrid extends StatelessWidget {
-  const CategoryGrid({super.key});
+  CategoryGrid({super.key, required this.onCategoryClicked});
+
+  void Function(CategoryModel) onCategoryClicked;
 
   @override
   Widget build(BuildContext context) {
@@ -65,9 +69,12 @@ class CategoryGrid extends StatelessWidget {
                 mainAxisSpacing: 24,
                 crossAxisSpacing: 24,
               ),
-              itemBuilder: (context, index) => CategoryItem(
-                index: index,
-                category: categoryList[index],
+              itemBuilder: (context, index) => InkWell(
+                onTap: () => onCategoryClicked(categoryList[index]),
+                child: CategoryItem(
+                  index: index,
+                  category: categoryList[index],
+                ),
               ),
               itemCount: categoryList.length,
             ),
