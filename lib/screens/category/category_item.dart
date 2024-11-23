@@ -22,7 +22,11 @@ class CategoryItem extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset('assets/${category.imageName}.png'),
+          Image.asset(
+            'assets/${category.imageName}.png',
+            fit: BoxFit.fill,
+            height: MediaQuery.sizeOf(context).height * 0.1,
+          ),
           Text(
             category.name,
             style: Theme.of(context).textTheme.titleLarge,

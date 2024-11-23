@@ -1,13 +1,12 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
 import 'package:news/models/source.dart';
+import 'package:news/screens/news/news_list.dart';
 import 'package:news/screens/tabs/tab_item.dart';
 
 class SourcesTabs extends StatefulWidget {
-  SourcesTabs(this.sources, {super.key});
+  const SourcesTabs(this.sources, {super.key});
 
-  List<Source> sources;
+  final List<Source> sources;
 
   @override
   State<SourcesTabs> createState() => _SourcesTabsState();
@@ -40,6 +39,11 @@ class _SourcesTabsState extends State<SourcesTabs> {
                 .toList(),
           ),
         ),
+        const Expanded(
+            child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 24),
+          child: NewsList(),
+        ))
       ],
     );
   }

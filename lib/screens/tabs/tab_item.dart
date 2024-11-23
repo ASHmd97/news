@@ -1,18 +1,16 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
 import 'package:news/app_theme.dart';
 
 class TabItem extends StatelessWidget {
-  TabItem({super.key, required this.name, required this.isSelected});
+  const TabItem({super.key, required this.name, required this.isSelected});
 
-  String name;
-  bool isSelected;
+  final String name;
+  final bool isSelected;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8),
+      margin: const EdgeInsets.symmetric(vertical: 12),
       padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
       decoration: BoxDecoration(
           border: Border.all(width: 2, color: AppTheme.primary),

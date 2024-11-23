@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable
+
 
 import 'package:flutter/material.dart';
 import 'package:news/app_theme.dart';
@@ -6,44 +6,44 @@ import 'package:news/models/category_model.dart';
 import 'package:news/screens/category/category_item.dart';
 
 class CategoryGrid extends StatelessWidget {
-  CategoryGrid({super.key, required this.onCategoryClicked});
+  const CategoryGrid({super.key, required this.onCategoryClicked});
 
-  void Function(CategoryModel) onCategoryClicked;
+  final void Function(CategoryModel) onCategoryClicked;
 
   @override
   Widget build(BuildContext context) {
     List<CategoryModel> categoryList = [
-      CategoryModel(
+      const CategoryModel(
         id: 'sports',
         name: 'Sports',
         imageName: 'ball',
         color: AppTheme.red,
       ),
-      CategoryModel(
+      const CategoryModel(
         id: 'sports',
         name: 'Politics',
         imageName: 'Politics',
         color: AppTheme.blue,
       ),
-      CategoryModel(
+      const CategoryModel(
         id: 'sports',
         name: 'Health',
         imageName: 'health',
         color: AppTheme.pink,
       ),
-      CategoryModel(
+      const CategoryModel(
         id: 'sports',
         name: 'Business',
         imageName: 'business',
         color: AppTheme.brown,
       ),
-      CategoryModel(
+      const CategoryModel(
         id: 'sports',
         name: 'Environment',
         imageName: 'environment',
         color: AppTheme.lightBlue,
       ),
-      CategoryModel(
+      const CategoryModel(
         id: 'sports',
         name: 'Science',
         imageName: 'science',

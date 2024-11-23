@@ -1,5 +1,3 @@
-// ignore_for_file: use_key_in_widget_constructors
-
 import 'package:flutter/material.dart';
 import 'package:news/app_theme.dart';
 import 'package:news/drawer/home_drawer.dart';
@@ -10,6 +8,8 @@ import 'package:news/screens/setting/setting_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = '/home';
+
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();

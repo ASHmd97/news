@@ -1,12 +1,10 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
 import 'package:news/app_theme.dart';
 
 class HomeDrawer extends StatelessWidget {
-  HomeDrawer({super.key, required this.onItemSelected});
+  const HomeDrawer({super.key, required this.onItemSelected});
 
-  void Function(DrawerItem) onItemSelected;
+  final void Function(DrawerItem) onItemSelected;
 
   @override
   Widget build(BuildContext context) {
