@@ -11,6 +11,7 @@ class AppTheme {
   static const Color lightBlue = Color(0xff4882CF);
   static const Color pink = Color(0xffED1E79);
   static const Color brown = Color(0xffCF7E48);
+  static const Color gray = Color(0xff79828B);
 
   static ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: Colors.transparent,
@@ -28,12 +29,21 @@ class AppTheme {
         ),
         iconTheme: IconThemeData(size: 40, color: white)),
     textTheme: const TextTheme(
-        titleLarge: TextStyle(
-          fontSize: 24,
-          fontWeight: FontWeight.bold,
-          color: white,
-        ),
-        titleSmall:
-            TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: black)),
+      titleLarge: TextStyle(
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+        color: white,
+      ),
+      titleSmall: TextStyle(
+        fontSize: 14,
+        fontWeight: FontWeight.w400,
+        color: black,
+      ),
+      labelSmall: TextStyle(
+        fontSize: 10,
+        fontWeight: FontWeight.w400,
+        color: gray,
+      ),
+    ),
   );
 }

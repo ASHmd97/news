@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:news/models/source.dart';
+import 'package:news/screens/news/news_list.dart';
 import 'package:news/screens/tabs/tab_item.dart';
 
 class SourcesTabs extends StatefulWidget {
@@ -40,6 +41,11 @@ class _SourcesTabsState extends State<SourcesTabs> {
                 .toList(),
           ),
         ),
+        const Expanded(
+            child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 24),
+          child: NewsList(),
+        ))
       ],
     );
   }
