@@ -7,7 +7,7 @@ class CategoryGrid extends StatelessWidget {
   const CategoryGrid({super.key, required this.onCategoryClicked});
 
   final void Function(CategoryModel) onCategoryClicked;
- 
+
   @override
   Widget build(BuildContext context) {
     List<CategoryModel> categoryList = [
@@ -37,7 +37,7 @@ class CategoryGrid extends StatelessWidget {
       ),
       const CategoryModel(
         id: 'entertainment',
-        name: 'Environment',
+        name: 'Entertainment',
         imageName: 'environment',
         color: AppTheme.lightBlue,
       ),

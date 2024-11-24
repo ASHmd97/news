@@ -40,11 +40,11 @@ class _SourcesTabsState extends State<SourcesTabs> {
                 .toList(),
           ),
         ),
-        const Expanded(
-            child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 24),
-          child: NewsList(),
-        ))
+        Expanded(
+          child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
+              child: NewsList(widget.sources[selectedTabIndex].id!)),
+        )
       ],
     );
   }

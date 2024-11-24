@@ -10,7 +10,6 @@ class CategoryDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Future<SourceResponse> sources = ApiService.getSources(model.id);
     return FutureBuilder(
       future: ApiService.getSources(categoryId),
       builder: (context, snapshot) {

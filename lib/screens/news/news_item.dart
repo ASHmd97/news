@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:news/app_theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:news/models/news_response/article.dart';
 import 'package:news/widgets/loading_indicator.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class NewsItem extends StatelessWidget {
-  const NewsItem({super.key});
-
+  const NewsItem(this.article, {super.key});
+  final Article article;
   @override
   Widget build(BuildContext context) {
-    final fifteenAgo = DateTime.now().subtract(const Duration(minutes: 15));
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(5),
           child: CachedNetworkImage(
-            imageUrl:
-                ('https://images.unsplash.com/photo-1729843352938-0e10fbf96585?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDY4fEJuLURqcmNCcndvfHxlbnwwfHx8fHw%3D'),
+            imageUrl: article.urlToImage ??
+                ('https://st2.depositphotos.com/2586633/46477/v/600/depositphotos_464771766-stock-illustration-no-photo-or-blank-image.jpg'),
             height: MediaQuery.sizeOf(context).height * 0.25,
             width: double.infinity,
             fit: BoxFit.fill,
@@ -28,13 +28,13 @@ class NewsItem extends StatelessWidget {
         ),
         const SizedBox(height: 6),
         Text(
-          'BBC News',
+          article.source?.name ?? '',
           textAlign: TextAlign.start,
           style: Theme.of(context).textTheme.labelSmall,
         ),
         const SizedBox(height: 4),
         Text(
-          "Why are football's biggest clubs starting a new tournament?",
+          article.title ?? '',
           textAlign: TextAlign.start,
           style: Theme.of(context)
               .textTheme
@@ -44,7 +44,7 @@ class NewsItem extends StatelessWidget {
         Align(
           alignment: AlignmentDirectional.centerEnd,
           child: Text(
-            timeago.format(fifteenAgo),
+            timeago.format(DateTime.parse(article.publishedAt!)),
             textAlign: TextAlign.end,
             style: Theme.of(context)
                 .textTheme
