@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:news/models/source.dart';
+import 'package:news/models/source_response/source.dart';
+
 import 'package:news/screens/news/news_list.dart';
 import 'package:news/screens/tabs/tab_item.dart';
 
@@ -32,7 +33,7 @@ class _SourcesTabsState extends State<SourcesTabs> {
             indicatorColor: Colors.transparent,
             tabs: widget.sources
                 .map((source) => TabItem(
-                      name: source.name,
+                      name: source.name ?? '',
                       isSelected:
                           widget.sources.indexOf(source) == selectedTabIndex,
                     ))

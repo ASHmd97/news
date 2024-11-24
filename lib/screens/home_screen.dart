@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
           onItemSelected: onDrawerItemSelected,
         ),
         body: categorySelected != null
-            ? CategoryDetails(model: categorySelected!)
+            ? CategoryDetails(categoryId: categorySelected!.id)
             : drawerSelected == DrawerItem.categories
                 ? CategoryGrid(
                     onCategoryClicked: onCategorySelected,

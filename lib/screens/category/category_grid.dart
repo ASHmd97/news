@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:news/app_theme.dart';
 import 'package:news/models/category_model.dart';
@@ -9,7 +7,7 @@ class CategoryGrid extends StatelessWidget {
   const CategoryGrid({super.key, required this.onCategoryClicked});
 
   final void Function(CategoryModel) onCategoryClicked;
-
+ 
   @override
   Widget build(BuildContext context) {
     List<CategoryModel> categoryList = [
@@ -20,31 +18,31 @@ class CategoryGrid extends StatelessWidget {
         color: AppTheme.red,
       ),
       const CategoryModel(
-        id: 'sports',
+        id: 'technology',
         name: 'Politics',
         imageName: 'Politics',
         color: AppTheme.blue,
       ),
       const CategoryModel(
-        id: 'sports',
+        id: 'health',
         name: 'Health',
         imageName: 'health',
         color: AppTheme.pink,
       ),
       const CategoryModel(
-        id: 'sports',
+        id: 'business',
         name: 'Business',
         imageName: 'business',
         color: AppTheme.brown,
       ),
       const CategoryModel(
-        id: 'sports',
+        id: 'entertainment',
         name: 'Environment',
         imageName: 'environment',
         color: AppTheme.lightBlue,
       ),
       const CategoryModel(
-        id: 'sports',
+        id: 'science',
         name: 'Science',
         imageName: 'science',
         color: AppTheme.yellow,
