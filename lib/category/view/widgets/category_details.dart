@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:news/api/api_service.dart';
-import 'package:news/screens/tabs/sources_tabs.dart';
-import 'package:news/widgets/error_indicator.dart';
-import 'package:news/widgets/loading_indicator.dart';
+import 'package:news/sources/view/widgets/sources_tabs.dart';
+import 'package:news/shared/widgets/error_indicator.dart';
+import 'package:news/shared/widgets/loading_indicator.dart';
 
 class CategoryDetails extends StatelessWidget {
   const CategoryDetails({super.key, required this.categoryId});
